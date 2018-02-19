@@ -76,9 +76,10 @@ Courtesy of [Ansible for DevOps](https://www.ansiblefordevops.com/), Ansible aim
 
 
 ## Resources
-This tutorial is mostly a combination of a few different Digital Ocean tutorials with my own feedback added in as I went through trial and error. Basically it's a dumbed down version with my trial and error feedback during the process of learning Ansible :-) Here are the links:
+This tutorial is mostly a combination of a few different Digital Ocean tutorials with my own feedback added in. Basically it's a dumbed down version with my trial and error feedback during the process of learning Ansible :-) 
+
+Here are the links:
 * [Official Ansible Documentation](http://docs.ansible.com/)
 * [How to set up SSH keys](https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2)
 * [How to automate install WP on Ubuntu 14](https://www.digitalocean.com/community/tutorials/how-to-automate-installing-wordpress-on-ubuntu-14-04-using-ansible)
 * [Ansible for DevOps GitHub Repo](https://github.com/geerlingguy/ansible-for-devops)
-* 
