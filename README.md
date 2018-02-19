@@ -1,6 +1,6 @@
 # AnsiblePractice
 
-### How to: Automate install Wordpress on an Ubuntu 14 instance
+### How to: Automate installing Wordpress on an Ubuntu 14 instance
 (Special thanks to DigitalOcean for having so many tutorials on many of these topics)
 
 ### A few disclaimers: 
