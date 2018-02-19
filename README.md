@@ -63,6 +63,13 @@ What is Ansible?
 
 Essentially, it's an open source configuration management software that [improves the scalability, consistency, and reliability of your IT environment](https://cloudacademy.com/blog/what-is-ansible/). It's built on Python, and it utilizes SSH, which is why we just went through all that trouble setting up an SSH RSA key. 
 
+Courtesy of [Ansible for DevOps](https://www.ansiblefordevops.com/), Ansible aims to be:
+* Clear - a simple YAML syntax
+* Fast - fast and easy to set up 
+* Complete - 'batteries included'
+* Efficient - no extra SW needed
+* Safe - uses SSH
+
 
 
 
