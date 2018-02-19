@@ -57,4 +57,18 @@ After you've entered your password to confirm you want to add the key(s), let's 
 Now you can SSH into your host server without a password. Yay!
 
 
-## Step 2: 
+## Step 2: Ansible Basics
+
+What is Ansible?
+
+Essentially, it's an open source configuration management software that [improves the scalability, consistency, and reliability of your IT environment](https://cloudacademy.com/blog/what-is-ansible/). It's built on Python, and it utilizes SSH, which is why we just went through all that trouble setting up an SSH RSA key. 
+
+
+
+
+
+
+## Resources
+This tutorial is mostly a combination of a few different Digital Ocean tutorials with my own feedback added in as I went through trial and error. Mostly it's a dumbed down version ;-) Here are the links:
+* https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
+* https://www.digitalocean.com/community/tutorials/how-to-automate-installing-wordpress-on-ubuntu-14-04-using-ansible
