@@ -1,0 +1,9 @@
+---  # equivalent to sudo apt-get update
+- hosts: ubuntu
+  user: user
+  sudo: yes
+  connection: ssh
+  gather_facts: no
+  tasks:
+  - name: apt-get update
+    apt: update_cache=yes

@@ -1,0 +1,17 @@
+---   # equivalent to apt-get install apache2, mysql . . . python-mysqldb
+- hosts: ubuntu
+  sudo: yes
+  user: user
+  tasks:
+  - name: install all packages
+    apt: name={{item}} state=present update_cache=yes
+    with_items:
+    - apache2
+    - mysql-server
+    - php5-mysql
+    - php5
+    - libapache2-mod-php5
+    - php5-mcrypt
+    - python-mysqldb
+  - name: start apache2
+    service: name=apache2 state=started
