@@ -110,17 +110,66 @@ ansible 1.5.4
 
 There is (obviously) way more to it than this, but for the sake of simplicity and my own limited knowledge, we will focus here, as it's all that is required to download the LAMP stack and host Wordpress. 
 
-Both of these files are located at `/etc/ansible`. Just in case you're new to Linux, /etc is generally where all configuration management files are located, and Ansible is no exception. 
+
+**Inventory**
+
+This is your `hosts` file. Essentially, you add entries into this file for every server you want to manage with Ansible. You group them together which is how Ansible determines which servers to SSH into. Here's a quick example of what you might put in the `hosts` file:
+
+```
+[portland]
+user@154.263.18.0
+user.myLabServer.com
+```
+
+Don't worry, I'll explain this more in the next step; I just want to give you a quick introduction.
+
+**Playbooks**
+
+So what the heck is a playbook and YAML file? Well, the playbooks themselves are [YAML files](https://en.wikipedia.org/wiki/YAML), which can be a little funky at first but are at least human-readable. Here's an example of a playbook below, in which we'll be writing something similar to host WordPress. Same as above... don't panic. We'll work through this slowly.
+
+```
+---
+- hosts: droplets
+  tasks:
+    - name: Installs nginx web server
+      apt: pkg=nginx state=installed update_cache=true
+      notify:
+        - start nginx
+
+  handlers:
+    - name: start nginx
+      service: name=nginx state=started
+```
+
+Using YAML, "[Playbooks are Ansible’s configuration, deployment, and orchestration language. They can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process](http://docs.ansible.com/ansible/latest/playbooks.html)." Think of a playbook like a recipe in a cookbook. It lays out all the ingredients, details and necessary processes, and then Ansible will actually execute these.
+
+Playbooks can be very advanced, but for us, our playbook will simply manage deployment to our lone remote machine.
+
+
+
+
+## Step 5: Modifying your hosts file
+
+Both of these files are located at `/etc/ansible/`. Just in case you're new to Linux, /etc/ is generally where all configuration management files are located, and Ansible is no exception. 
 
 So, let's take a look at the directory:
 
 ```
-cd /etc/ansible
+cd /etc/ansible/
 ```
+
+If you type in `ls`, you'll see two files: `ansible.cfg` and `hosts`.
+
+Take a peek into `hosts` and you'll see some examples on how to set up a collection of hosts among other things. This is a good file to reference in the future, so we're going to `mov` it in the directory for reference later and create a new `hosts` file for our own use. 
+
+
+
 
 
 
 **Inventory**
+
+
 [Official Documentation Here](http://docs.ansible.com/ansible/latest/intro_inventory.html)
 
 
