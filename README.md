@@ -141,7 +141,7 @@ So what the heck is a playbook and YAML file? Well, the playbooks themselves are
       service: name=nginx state=started
 ```
 
-Using YAML, "[Playbooks are Ansible’s configuration, deployment, and orchestration language. They can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process](http://docs.ansible.com/ansible/latest/playbooks.html)." Think of a playbook like a recipe in a cookbook. It lays out all the ingredients, details and necessary processes, and then Ansible will actually execute these.
+"[Playbooks are Ansible’s configuration, deployment, and orchestration language. They can describe a policy you want your remote systems to enforce, or a set of steps in a general IT process](http://docs.ansible.com/ansible/latest/playbooks.html)." Think of a playbook like a recipe in a cookbook. It lays out all the ingredients, details and necessary processes, and then Ansible will actually execute these.
 
 Playbooks can be very advanced, but for us, our playbook will simply manage deployment to our lone remote machine.
 
@@ -149,6 +149,8 @@ Playbooks can be very advanced, but for us, our playbook will simply manage depl
 
 
 ## Step 5: Modifying your hosts file
+
+Okay, now we know a little bit about both the playbooks and inventory. Let's check out the `hosts` file first in order to set up the node we'll SSH into. 
 
 Both of these files are located at `/etc/ansible/`. Just in case you're new to Linux, /etc/ is generally where all configuration management files are located, and Ansible is no exception. 
 
@@ -160,17 +162,54 @@ cd /etc/ansible/
 
 If you type in `ls`, you'll see two files: `ansible.cfg` and `hosts`.
 
-Take a peek into `hosts` and you'll see some examples on how to set up a collection of hosts among other things. This is a good file to reference in the future, so we're going to `mov` it in the directory for reference later and create a new `hosts` file for our own use. 
+Take a peek into the contents of `hosts` using `cat hosts` and you'll see some examples on how to set up a collection of hosts among other things. This is a good file to reference in the future, so we're going to `mov` it in the directory for reference later and create a new `hosts` file for our own use. 
 
+```
+mov hosts hostsOriginalExps
+```
+Now let's create the new `hosts` file. Any text editor will work, so feel free to use eMacs or Nano instead.
 
+```
+sudo vim hosts
+```
 
+Now add in the node (basically, the IP address) you will want to use, which you can see below. [ubuntu] is the grouping name I used, but you could name it anything you want. Notice in the above example on hosts I put in [portland], so that could could be a group of servers residing in Portland. You'll use `[ubuntu]` later on to reference this specific grouping in the playbook. 
 
+```
+#this is your inventory file. comments start with #
+[ubuntu]
+user@IPaddress
+user@154.263.18.0
+```
 
+Great! Our `hosts` file is now set up. Let's use `ping` to make sure the connection is actually established.
 
-**Inventory**
+Type in:
 
+```
+ansible all -m ping
+```
 
-[Official Documentation Here](http://docs.ansible.com/ansible/latest/intro_inventory.html)
+You'll get 1 of these 2 responses below. If it's green, woohoo! If it's red, you probably have some SSH issues. First step should be to just trying `ssh user@54.144.223.213` to see if that works. Google is really your best bet though, as that's outside the scope of this tutorial. 
+
+```
+user@54.144.223.213 | success >> {
+    "changed": false, 
+    "ping": "pong"
+}
+
+OR
+
+user@54.144.223.213 | FAILED => SSH encountered an unknown error during the connection. 
+We recommend you re-run the command using -vvvv, 
+which will enable SSH debugging output to help diagnose the issue
+```
+
+If you want to learn more, [here's the official documentation](http://docs.ansible.com/ansible/latest/intro_inventory.html)
+
+## Step 6: Setting up your playbook
+
+Hopefully you're still with me. We. Are. Almost. There.
 
 
 
