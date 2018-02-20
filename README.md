@@ -11,7 +11,7 @@
 * 2 Linux distributions: a build server (where you'll download Ansible) and a node (where WordPress will be downloaded) In this tutorial, both will be running Ubuntu 14.04
 * Basic Linux knowledge (but I'll walk you through it)
 
-## Step 1:
+## Step 1: Setting up an SSH RSA Key
 First, we'll set up an [SSH RSA key](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) on your **build server** (most likely just your home computer), which is essentially an encryption algorithm allowing you to [securely communicate](https://help.ubuntu.com/community/SSH/OpenSSH/Keys) between the two machines. In your home directory, type in:
 ```ssh-keygen -t rsa```
 
@@ -60,9 +60,9 @@ Now you can SSH into your host server without a password. Yay!
 
 ## Step 2: Ansible Basics (like, REALLY basic)
 
-What is Ansible?
+So... what is Ansible?
 
-Essentially, it's an open source configuration management software that [improves the scalability, consistency, and reliability of your IT environment](https://cloudacademy.com/blog/what-is-ansible/). It's built on Python, and it utilizes SSH, which is why we just went through all that trouble setting up an SSH RSA key!  
+Essentially, it's an open source configuration management software that [improves the scalability, consistency, and reliability of your IT environment](https://cloudacademy.com/blog/what-is-ansible/) and can probably be described in another 50 buzzwords too. It's built on Python, and it utilizes SSH, which is why we just went through all that trouble setting up an SSH RSA key!  
 
 Courtesy of [Ansible for DevOps](https://www.ansiblefordevops.com/), Ansible aims to be:
 * Clear - a simple YAML syntax
@@ -72,10 +72,7 @@ Courtesy of [Ansible for DevOps](https://www.ansiblefordevops.com/), Ansible aim
 * Safe - uses SSH
 
 
-Think of it this way: if you have 1,000 servers where you want each to be set up in an identical manner, would you rather SSH into each of these servers , or use Ansible to automate the entire process for you?
-
-News flash - you're still going to have some growing pains and issues in Ansible, but it's pretty complete and definitely easy to use.
-
+Think of it this way: if you have 1,000 servers where you want each to be set up in an identical manner, would you rather SSH into each of these servers, or use Ansible to automate the entire process for you?
 
 
 ## Step 3: Installing Ansible
@@ -84,19 +81,28 @@ We're almost to the good stuff. I promise.
 
 If you have made it this far, I assume you already know how to download and install packages through the command line, but if that isn't the case, [check out this video](https://www.youtube.com/watch?v=EKmLXiA4zaQ).
 
-So let's get started with typing this into your command line:
+So let's get started with typing this into your command line to download Ansible:
 
 ```
 sudo apt-get install ansible -y
 ```
 
-Ansible is built on Python (and is completely open source if you want to check it out), so you won't need to download Python as it comes preinstalled on Ubuntu. 
+Ansible is built on Python (and is completely open source [if you want to check it out](https://github.com/ansible/ansible)), so you won't need to download Python as it comes preinstalled on Ubuntu. If you're on another distribution, it's probably a good idea to check if Python downloaded. Type this in to confirm:
 
-Now, we have Ansible installed. Let's check out what version it is, if you're having any doubts it was installed improperly.
+```which python```
+
+If `/usr/bin/python` populates, you are good to go!
+
+Now, we have Ansible installed. Let's check out what version it is just to get familiar with the syntax.
 
 ```ansible --version```
 
-For me, the output is: `ansible 1.5.4`
+Your output should look something like: 
+```
+ansible 1.5.4
+```
+
+
 
 
 
