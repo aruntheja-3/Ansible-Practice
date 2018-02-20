@@ -391,7 +391,9 @@ user@35.168.2.79           : ok=3    changed=0    unreachable=0    failed=0
 ```
 
 
+### Voila! Your packages are installed.
 
+Now you can configure them however needed. 
 
 ## Resources
 This tutorial is mostly a combination of a few different Digital Ocean and Linux Academy tutorials with my own feedback added in. Basically it's a dumbed down version with my trial and error feedback during the process of learning Ansible :-) 
