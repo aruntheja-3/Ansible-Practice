@@ -187,6 +187,12 @@ Great! Our `hosts` file is now set up. Let's use `ping` to make sure the connect
 Type in:
 
 ```
+ansible ubuntu -m ping
+```
+
+or
+
+```
 ansible all -m ping
 ```
 
@@ -210,6 +216,21 @@ If you want to learn more, [here's the official documentation](http://docs.ansib
 ## Step 6: Setting up your playbook
 
 Hopefully you're still with me. We. Are. Almost. There.
+
+Let's first take a look at a basic playbook which updates your cache in Ubuntu. It's equivalent to `sudo apt-get update`.
+
+
+
+NOTE:
+
+
+If you are having troubles with Apache2 not starting, there's a decent chance it's because you have Nginx installed (and possibly running), and it may be taking up your port 80. Try this on the node below, and then re-run the playbook to see if it works. Huge thanks to user [arnoldkarani](https://www.digitalocean.com/community/users/arnoldkarani) for this tip in the Digital Ocean comments.
+
+```
+sudo apt-get remove nginx nginx-common # Removes all but config files.
+sudo apt-get purge nginx nginx-common # Removes everything.
+sudo apt-get autoremove #After using any of the above commands, use this in order to remove dependencies used by nginx which are no longer required.
+```
 
 
 
