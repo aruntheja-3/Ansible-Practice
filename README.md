@@ -6,10 +6,10 @@
 
 * Ubuntu 14.04 is being used here. You should be able to follow along with other Linux distributions, however
 * Root/sudo privileges are necessary
+* This tutorial is aimed towards Linux beginners, so bear with me if you are a more advanced user
 
 ## Requirements:
 * 2 Linux distributions: a build server (where you'll download Ansible) and a node (where WordPress will be downloaded) In this tutorial, both will be running Ubuntu 14.04
-* Basic Linux knowledge (but I'll walk you through it)
 
 ## Step 1: Setting up an SSH RSA Key
 First, we'll set up an [SSH RSA key](https://en.wikipedia.org/wiki/RSA_(cryptosystem)) on your **build server** (most likely just your home computer), which is essentially an encryption algorithm allowing you to [securely communicate](https://help.ubuntu.com/community/SSH/OpenSSH/Keys) between the two machines. In your home directory, type in:
@@ -81,19 +81,19 @@ We're almost to the good stuff. I promise.
 
 If you have made it this far, I assume you already know how to download and install packages through the command line, but if that isn't the case, [check out this video](https://www.youtube.com/watch?v=EKmLXiA4zaQ).
 
+Before we download Ansible, it's important to know Ansible is built on Python (and is completely open source [if you want to check it out](https://github.com/ansible/ansible)), but you won't need to download Python as it comes preinstalled on Ubuntu. If you're on another distribution, it's probably a good idea to check if Python downloaded. Type this in to confirm:
+
+```which python```
+
+If `/usr/bin/python` populates, you are good to go!
+
 So let's get started with typing this into your command line to download Ansible:
 
 ```
 sudo apt-get install ansible -y
 ```
 
-Ansible is built on Python (and is completely open source [if you want to check it out](https://github.com/ansible/ansible)), so you won't need to download Python as it comes preinstalled on Ubuntu. If you're on another distribution, it's probably a good idea to check if Python downloaded. Type this in to confirm:
-
-```which python```
-
-If `/usr/bin/python` populates, you are good to go!
-
-Now, we have Ansible installed. Let's check out what version it is just to get familiar with the syntax.
+Now, we have Ansible installed. Woohoo! Let's check out what version it is just to start getting familiar with the syntax.
 
 ```ansible --version```
 
@@ -102,26 +102,27 @@ Your output should look something like:
 ansible 1.5.4
 ```
 
-
-
-
-
-
-
-
-
-
-
-
+## Step 4: Understanding hosts and playbooks
 
 **In this tutorial, we are focusing on two major components of Ansible:**
-* Inventory/host file
+* Inventory/hosts file
 * YAML playbooks
 
-There is (obviously) way more to it than this, but for the sake of simplicity and my own limited knowledge, we will focus here. 
+There is (obviously) way more to it than this, but for the sake of simplicity and my own limited knowledge, we will focus here, as it's all that is required to download the LAMP stack and host Wordpress. 
+
+Both of these files are located at `/etc/ansible`. Just in case you're new to Linux, /etc is generally where all configuration management files are located, and Ansible is no exception. 
+
+So, let's take a look at the directory:
+
+```
+cd /etc/ansible
+```
+
+
 
 **Inventory**
 [Official Documentation Here](http://docs.ansible.com/ansible/latest/intro_inventory.html)
+
 
 
 
