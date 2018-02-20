@@ -125,7 +125,7 @@ Don't worry, I'll explain this more in the next step; I just want to give you a 
 
 **Playbooks**
 
-So what the heck is a playbook and YAML file? Well, the playbooks themselves are [YAML files](https://en.wikipedia.org/wiki/YAML), which can be a little funky at first but are at least human-readable. Here's an example of a playbook below, in which we'll be writing something similar to host WordPress [thanks Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-ansible-playbooks-to-automate-system-configuration-on-ubuntu). Same as above... don't panic. We'll work through this slowly.
+So what the heck is a playbook and YAML file? Well, the playbooks themselves are [YAML files](https://en.wikipedia.org/wiki/YAML), which can be a little funky at first but are at least human-readable. Here's an example of a playbook below, in which we'll be writing something similar to host WordPress ([thanks Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-create-ansible-playbooks-to-automate-system-configuration-on-ubuntu)). Same as above... don't panic. We'll work through this slowly.
 
 ```
 ---
