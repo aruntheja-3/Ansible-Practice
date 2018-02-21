@@ -2,6 +2,20 @@
 
 ### How to: Automate installing LAMP stack on Ubuntu 14 using Ansible
 
+[Step 1: Setting up an SSH RSA Key](https://github.com/lucassha/Ansible-Practice#step-1-setting-up-an-ssh-rsa-key)
+
+[Step 2: Ansible Basics (like, REALLY basic)](https://github.com/lucassha/Ansible-Practice#step-2-ansible-basics-like-really-basic)
+
+[Step 3: Installing Ansible](https://github.com/lucassha/Ansible-Practice#step-3-installing-ansible)
+
+[Step 4: Understanding hosts and playbooks](https://github.com/lucassha/Ansible-Practice#step-4-understanding-hosts-and-playbooks)
+
+[Step 5: Modifying your hosts file](https://github.com/lucassha/Ansible-Practice#step-5-modifying-your-hosts-file)
+
+[Step 6: Setting up your first playbook](https://github.com/lucassha/Ansible-Practice#step-6-setting-up-your-first-playbook)
+
+[Step 7: Setting up your LAMP stack playbook](https://github.com/lucassha/Ansible-Practice#step-7-setting-up-your-lamp-stack-playbook)
+
 ### A couple disclaimers: 
 
 * Ubuntu 14.04 is being used here. You should be able to follow along with any distribution though. Just remember, you need to use `yum` instead of `apt` 
