@@ -18,7 +18,7 @@
 
 ### A couple disclaimers: 
 
-* Ubuntu 14.04 is being used here. You should be able to follow along with any distribution though. Just remember, you need to use `yum` instead of `apt` 
+* Ubuntu 14.04 is being used here. You should be able to follow along with any distribution though
 * Root/sudo privileges are necessary
 * This tutorial is aimed towards Linux and Ansible beginners
 
