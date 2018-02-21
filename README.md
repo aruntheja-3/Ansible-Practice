@@ -4,7 +4,7 @@
 
 [Step 1: Setting up an SSH RSA Key](https://github.com/lucassha/Ansible-Practice#step-1-setting-up-an-ssh-rsa-key)
 
-[Step 2: Ansible Basics (like, REALLY basic)](https://github.com/lucassha/Ansible-Practice#step-2-ansible-basics-like-really-basic)
+[Step 2: Ansible Basics](https://github.com/lucassha/Ansible-Practice#step-2-ansible-basics-like-really-basic)
 
 [Step 3: Installing Ansible](https://github.com/lucassha/Ansible-Practice#step-3-installing-ansible)
 
