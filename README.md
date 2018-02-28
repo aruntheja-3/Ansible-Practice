@@ -1,6 +1,6 @@
 # Ansible/Linux Practice
 
-### How to: Automate installing LAMP stack on Ubuntu 14 using Ansible
+### How to: install LAMP stack on Ubuntu 14 using Ansible
 
 [Step 1: Setting up an SSH RSA Key](https://github.com/lucassha/Ansible-Practice#step-1-setting-up-an-ssh-rsa-key)
 
